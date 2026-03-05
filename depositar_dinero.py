@@ -3,8 +3,6 @@ from tiempo_de_carga import cargar
 from limpiar_pantalla import Limpiar_pantalla
 from main import saldo
 from Validaciones import pedir_numero
-from MENU import bienvenida
-from Historial import mostrar_historial
 
 
 while True:
@@ -12,7 +10,6 @@ while True:
         
         monto = pedir_numero(f"{VERDE}Ingrese el monto a depositar:{BLANCO}\n$ ")
         print(f"{VERDE}")
-
         Limpiar_pantalla()
         cargar()
         print("\n")

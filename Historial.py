@@ -23,3 +23,5 @@ def mostrar_historial():
         for i, operacion in enumerate(historial_operaciones, 1):
             print(f"│ {i}. {operacion}")
             print("└────────────────────┘\n")
+
+mostrar_historial()
