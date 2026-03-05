@@ -4,12 +4,11 @@ from limpiar_pantalla import Limpiar_pantalla
 from main import saldo
 from Validaciones import pedir_numero
 from MENU import bienvenida
-from historial import historial
+from Historial import mostrar_historial
 
 
 while True:
     def depositar_dinero(usuario, CUENTAS):
-        bienvenida()
         
         monto = pedir_numero(f"{VERDE}Ingrese el monto a depositar:{BLANCO}\n$ ")
         print(f"{VERDE}")
@@ -41,7 +40,6 @@ while True:
             print(f"✅ Depósito exitoso. Nuevo saldo:\n")
             print(f"{BLANCO}$ {int(CUENTAS[usuario]['saldo'])}{VERDE}\n")
             input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
-            historial.append(f"Depósito: +${int(monto)}")
 
             Limpiar_pantalla()
             cargar()
