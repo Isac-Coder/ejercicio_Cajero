@@ -1,1 +1,0 @@
-saldo = 1000  # saldo inicial
