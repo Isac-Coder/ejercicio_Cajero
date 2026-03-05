@@ -26,11 +26,15 @@ def autenticar():
             pin = input("Ingrese su PIN de 4 números: \n").strip()
 
             if not pin.isdigit():
+                intentos += 1
                 print("⚠ Error: El PIN solo puede contener numeros.")
+                print(f"Intentos restantes: {MAX_INTENTOS - intentos}")
                 continue
 
             if len(pin) != 4:
+                intentos += 1
                 print("⚠ Error: El PIN debe tener exactamente 4 digitos.")
+                print(f"Intentos restantes: {MAX_INTENTOS - intentos}")
                 continue
 
             if CUENTAS[usuario]["clave"] == pin:
@@ -45,8 +49,6 @@ def autenticar():
                 if intentos == MAX_INTENTOS:
                     print("🔒 Cuenta bloqueada temporalmente por demasiados intentos de PIN.")
                     return None
-
-if __name__ == "__main__":
+                
+if __name__ == "__main__":    
     autenticar()
-    
-    
