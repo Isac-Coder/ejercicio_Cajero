@@ -1,0 +1,8 @@
+VERDE = "\033[92m"
+ROJO = "\033[91m"
+AMARILLO = "\033[93m"
+AZUL = "\033[94m"
+MORADO = "\033[95m"
+CIAN = "\033[96m"
+BLANCO = "\033[97m"
+RESET = "\033[0m"
