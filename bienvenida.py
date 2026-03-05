@@ -1,0 +1,7 @@
+print("")
+print("Bienvenido Al Cajero Automatico")
+print("1. Retirar Dinero")
+print("2. Depositar Dinero")
+print("3. Consultar Saldo")
+print("4. Salir")
+print("")
