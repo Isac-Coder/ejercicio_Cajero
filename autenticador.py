@@ -30,7 +30,7 @@ def autenticar():
                 print("PIN incorrecto")
                 intentos += 1
                 print(f"Intentos restantes {MAX_INTENTOS - intentos}")
-                break
+                continue
 
     print("Cuenta suspendida temporalmente por demasiados intentos")
     return None
