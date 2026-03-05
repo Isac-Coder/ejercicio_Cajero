@@ -13,7 +13,8 @@ def bienvenida():
     print("│  1. Retirar Dinero.           │")
     print("│  2. Depositar Dinero          │")
     print("│  3. Consultar Saldo           │")
-    print(f"│{ROJO}  4. Salir{VERDE}                     │")
+    print("│  4. Consultar Historial       │")
+    print(f"│{ROJO}  5. Salir{VERDE}                     │")
     print("└───────────────────────────────┘\n")
     
 
