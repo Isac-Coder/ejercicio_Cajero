@@ -4,14 +4,20 @@ from limpiar_pantalla import Limpiar_pantalla
 
 historial_operaciones = []
 
+def registrar_operacion(descripcion):
+    """
+    Agrega una descripción de operación al historial.
+    """
+    historial_operaciones.append(descripcion)
+
 def mostrar_historial():
     Limpiar_pantalla()
     cargar()
     Limpiar_pantalla()
 
-    print(f"{AMARILLO}┌───────────┐")
-    print(f"│{VERDE} HISTORIAL {AMARILLO}│")
-    print(f"└───────────┘{VERDE}\n")
+    print(f"{AMARILLO}╔═══════════╗")
+    print(f"║{VERDE} HISTORIAL {AMARILLO}║")
+    print(f"╚═══════════╝{VERDE}\n")
 
     if not historial_operaciones:
         print(f"{ROJO} No hay operaciones en el historial.{VERDE}\n")
@@ -21,6 +27,10 @@ def mostrar_historial():
         Limpiar_pantalla()
     else:
         for i, operacion in enumerate(historial_operaciones, 1):
-            print(f"│ {i}. {operacion}")
-            print("└────────────────────┘\n")
+            print(f"║ {i}. {operacion}")
+            print("╚════════════════════╝\n")
+        input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
+        Limpiar_pantalla()
+        cargar()
+        Limpiar_pantalla()
 

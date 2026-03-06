@@ -1,4 +1,7 @@
 from usuarios import CUENTAS
+from ansi_colores import *
+from limpiar_pantalla import Limpiar_pantalla
+from tiempo_de_carga import cargar
 
 MAX_INTENTOS = 3
 
@@ -6,39 +9,77 @@ def autenticar():
     intentos = 0
 
     while intentos < MAX_INTENTOS:
+        Limpiar_pantalla()
+        cargar()
+        Limpiar_pantalla()
 
-        usuario = input("Ingrese su usuario: \n").strip()
+        usuario = input(f"{VERDE}👤 Ingrese su usuario:{BLANCO} \n").lower().strip()
+        Limpiar_pantalla()
+        cargar()
+        Limpiar_pantalla()
 
         if usuario not in CUENTAS:
             intentos += 1
-            print("❌ Usuario incorrecto")
-            print(f"Intentos restantes: {MAX_INTENTOS - intentos}")
+
+            print(f"{ROJO}❌ Usuario incorrecto{AMARILLO}\n")
+            print(f"Intentos restantes: {MAX_INTENTOS - intentos}{VERDE}\n")
+            input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
+
+            Limpiar_pantalla()
+            cargar()
+            Limpiar_pantalla()
             
         
             if intentos == MAX_INTENTOS:
-                print("🔒 Cajero bloqueado temporalmente por demasiados intentos.")
+
+                print(f"{ROJO}🔒 Cajero bloqueado temporalmente por demasiados intentos.{AMARILLO}")
+                input(f"Presione Enter para continuar...{VERDE}")
+                Limpiar_pantalla()
+                cargar()
+                Limpiar_pantalla()
                 return None
             
             continue
         
         while intentos < MAX_INTENTOS:
 
-            pin = input("Ingrese su PIN de 4 números: \n").strip()
+
+            pin = input(f"{VERDE}🔒 Ingrese su PIN de 4 números:{BLANCO} \n").strip()
+            Limpiar_pantalla()
+            cargar()
+            Limpiar_pantalla()
 
             if not pin.isdigit():
                 intentos += 1
-                print("⚠ Error: El PIN solo puede contener numeros.")
+
+                print(f"{ROJO}⚠ Error: El PIN solo puede contener numeros.{AMARILLO}")
                 print(f"Intentos restantes: {MAX_INTENTOS - intentos}")
+                input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
+
+                Limpiar_pantalla()
+                cargar()
+                Limpiar_pantalla()
                 continue
 
             if len(pin) != 4:
                 intentos += 1
-                print("⚠ Error: El PIN debe tener exactamente 4 digitos.")
-                print(f"Intentos restantes: {MAX_INTENTOS - intentos}")
+
+
+                print(f"{ROJO}⚠ Error: El PIN debe tener exactamente 4 digitos.{AMARILLO}")
+                print(f"Intentos restantes: {MAX_INTENTOS - intentos}{VERDE}")
+                input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
+
+                Limpiar_pantalla()
+                cargar()
+                Limpiar_pantalla()
                 continue
 
             if CUENTAS[usuario]["clave"] == pin:
-                print("✅ Autenticación exitosa")
+                print("✅ Autenticación exitosa\n")
+                input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
+                Limpiar_pantalla()
+                cargar()
+                Limpiar_pantalla()
                 return usuario
 
             else:
@@ -49,4 +90,3 @@ def autenticar():
                 if intentos == MAX_INTENTOS:
                     print("🔒 Cuenta bloqueada temporalmente por demasiados intentos de PIN.")
                     return None
-                

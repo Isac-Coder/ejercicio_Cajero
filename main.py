@@ -6,6 +6,8 @@ from Retirar import retirar_dinero
 from saldo import consultar_saldo
 from Boton_salir import salir
 from limpiar_pantalla import *
+from Historial import mostrar_historial
+
 
 def main():
     Limpiar_pantalla()
@@ -17,7 +19,7 @@ def main():
         bienvenida()
 
 
-        opcion =  int(input("selecciona una opcion\n"))     # mostrar menu
+        opcion =  int(input("selecciona una opcion:\n# "))     # mostrar menu
 
         if opcion == 2:
                 depositar_dinero(usuario, CUENTAS)
@@ -26,10 +28,13 @@ def main():
                retirar_dinero(usuario , CUENTAS)
 
         elif opcion == 3:
-                consultar_saldo()
+                consultar_saldo(usuario, CUENTAS)
 
         elif opcion == 4:
-            (salir)
+            mostrar_historial()
+        
+        elif opcion == 5:
+            salir()
 
 
         else:
