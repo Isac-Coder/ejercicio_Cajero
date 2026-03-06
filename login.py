@@ -1,6 +1,7 @@
 from usuarios import CUENTAS
 from funciones import *
 
+
 MAX_INTENTOS = 3
 
 def autenticar():

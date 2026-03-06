@@ -15,6 +15,9 @@ def main():
     
 
     while True:
+        if usuario is None:
+             print("🔒 Sistema bloqueado.")
+             exit()
         bienvenida()
         # Leer opción del menú validando que sea numérica
         opcion = int(pedir_numero(f"selecciona una opcion:{BLANCO}\n# ", al_error=bienvenida))
@@ -29,7 +32,7 @@ def main():
                 consultar_saldo(usuario, CUENTAS)
 
         elif opcion == 4:
-            mostrar_historial()
+            mostrar_historial() 
         
         elif opcion == 5:
             salir()
