@@ -1,7 +1,5 @@
 from usuarios import CUENTAS
-from ansi_colores import *
-from limpiar_pantalla import Limpiar_pantalla
-from tiempo_de_carga import cargar
+from funciones import *
 
 MAX_INTENTOS = 3
 

@@ -1,5 +1,4 @@
-from ansi_colores import *
-from limpiar_pantalla import Limpiar_pantalla
+from funciones import *
 
 def bienvenida():
     Limpiar_pantalla()

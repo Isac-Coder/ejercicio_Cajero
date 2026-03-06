@@ -5,8 +5,7 @@ from depositar_dinero import depositar_dinero
 from Retirar import retirar_dinero
 from saldo import consultar_saldo
 from Boton_salir import salir
-from limpiar_pantalla import *
-from Historial import mostrar_historial
+from funciones import *
 
 
 def main():
@@ -17,9 +16,8 @@ def main():
 
     while True:
         bienvenida()
-
-
-        opcion =  int(input("selecciona una opcion:\n# "))     # mostrar menu
+        # Leer opción del menú validando que sea numérica
+        opcion = int(pedir_numero(f"selecciona una opcion:{BLANCO}\n# ", al_error=bienvenida))
 
         if opcion == 2:
                 depositar_dinero(usuario, CUENTAS)
@@ -38,6 +36,8 @@ def main():
 
 
         else:
-            print("Opción inválida")
+            print(f"{ROJO}Opción inválida.{VERDE}")
+            input(f"{AMARILLO}Presione ENTER para continuar\n")
+            Limpiar_pantalla()
 
 main()

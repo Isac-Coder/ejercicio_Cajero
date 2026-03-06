@@ -1,9 +1,6 @@
-from Validaciones import pedir_numero
+from funciones import *
 from usuarios import CUENTAS
-from ansi_colores import *
-from limpiar_pantalla import Limpiar_pantalla
-from tiempo_de_carga import cargar
-from Historial import registrar_operacion
+
 
 def consultar_saldo(usuario, CUENTAS):
     Limpiar_pantalla()

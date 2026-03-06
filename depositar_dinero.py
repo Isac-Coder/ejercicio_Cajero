@@ -1,10 +1,9 @@
-from ansi_colores import *
-from tiempo_de_carga import cargar
-from limpiar_pantalla import Limpiar_pantalla
-from Validaciones import pedir_numero
+from funciones import *
 from usuarios import CUENTAS
 from login import *
-from Historial import registrar_operacion
+
+
+LIMITE_MAX_DEPOSITO = 1_000_000
 
 
 def depositar_dinero(usuario, CUENTAS):
@@ -36,6 +35,16 @@ def depositar_dinero(usuario, CUENTAS):
     elif monto_deposito < 100:
         print(
             f"{ROJO}⚠️  El monto minimo permitido para depósito es de {BLANCO}$100.{ROJO} Intente nuevamente. ⚠️\n{VERDE}"
+        )
+        input(f"{AMARILLO}Presione Enter para continuar...")
+
+        Limpiar_pantalla()
+        cargar()
+        Limpiar_pantalla()
+        return
+    elif monto_deposito > LIMITE_MAX_DEPOSITO:
+        print(
+            f"{ROJO}⚠️  El monto máximo permitido para depósito es de {BLANCO}$ {int(LIMITE_MAX_DEPOSITO)}.{ROJO} Intente nuevamente. ⚠️\n{VERDE}"
         )
         input(f"{AMARILLO}Presione Enter para continuar...")
 

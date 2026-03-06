@@ -1,16 +1,26 @@
-#Consultar saldo
-
-from Validaciones import pedir_numero
-from ansi_colores import *
-from limpiar_pantalla import Limpiar_pantalla
-from tiempo_de_carga import cargar
+from funciones import *
 from login import *
-from Historial import registrar_operacion
-    
+from datetime import date
+
+
+LIMITE_DIARIO_RETIRO = 1_000_000
+
+
 def retirar_dinero(usuario, CUENTAS):
     Limpiar_pantalla()
     cargar()
     Limpiar_pantalla()
+
+    cuenta = CUENTAS[usuario]
+    hoy = date.today().isoformat()
+
+    # Reiniciar acumulado diario si es un nuevo día
+    if cuenta.get("fecha_ultimo_retiro") != hoy:
+        cuenta["fecha_ultimo_retiro"] = hoy
+        cuenta["retirado_hoy"] = 0
+
+    retirado_hoy = cuenta.get("retirado_hoy", 0)
+
     retirar = pedir_numero(f"{VERDE}Ingrese el valor que desea retirar:{BLANCO}\n$ ")
     Limpiar_pantalla()
     cargar()
@@ -23,20 +33,37 @@ def retirar_dinero(usuario, CUENTAS):
         cargar()
         Limpiar_pantalla()
 
-    elif retirar > CUENTAS[usuario]["saldo"]:
+    elif retirar > cuenta["saldo"]:
         print(f"{ROJO}No se puede retirar más del saldo disponible.\n")
         input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
         Limpiar_pantalla()
         cargar()
         Limpiar_pantalla()
 
+    elif retirado_hoy + retirar > LIMITE_DIARIO_RETIRO:
+        restante = LIMITE_DIARIO_RETIRO - retirado_hoy
+        print(
+            f"{ROJO}Límite diario de retiro excedido.\n"
+            f"Solo puede retirar {BLANCO}$ {int(restante)}{ROJO} más hoy.{VERDE}\n"
+        )
+        input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
+        Limpiar_pantalla()
+        cargar()
+        Limpiar_pantalla()
+
     else:
-        CUENTAS[usuario]["saldo"] -= retirar
+        cuenta["saldo"] -= retirar
+        cuenta["retirado_hoy"] = retirado_hoy + retirar
+        saldo_restante = int(cuenta["saldo"])
+
         registrar_operacion(
-            f"Retiro de $ {int(retirar)}. Nuevo saldo: $ {int(CUENTAS[usuario]['saldo'])}"
+            f"Retiro de $ {int(retirar)}. Nuevo saldo: $ {saldo_restante}"
         )
         print(f"{VERDE}Retiro exitoso.\n")
-        print("Su nuevo saldo es:", int(CUENTAS[usuario]["saldo"]),"\n")
+        print(f"Su nuevo saldo es:{BLANCO}", saldo_restante, "\n")
+        print(
+            f"{VERDE}Saldo restante en su cuenta:{BLANCO} $ {saldo_restante}{VERDE}\n"
+        )
         input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
         Limpiar_pantalla()
         cargar()
