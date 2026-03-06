@@ -60,7 +60,7 @@ def retirar_dinero(usuario, CUENTAS):
             f"Retiro de $ {int(retirar)}. Nuevo saldo: $ {saldo_restante}"
         )
         print(f"{VERDE}Retiro exitoso.\n")
-        print(f"Su nuevo saldo es:{BLANCO}", saldo_restante, "\n")
+        print(f"Usted retiró:{BLANCO} $ {int(retirar)}{VERDE}\n")
         print(
             f"{VERDE}Saldo restante en su cuenta:{BLANCO} $ {saldo_restante}{VERDE}\n"
         )

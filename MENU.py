@@ -1,6 +1,6 @@
 from funciones import *
 
-def bienvenida():
+def menu():
     Limpiar_pantalla()
     print(f"{VERDE}")
     print("╔═══════════════════════════════╗")

@@ -72,8 +72,8 @@ def mostrar_historial():
     cargar()
     Limpiar_pantalla()
 
-    print(f"{AMARILLO}╔═══════════╗")
-    print(f"║{VERDE} HISTORIAL {AMARILLO}║")
+    print(f"{VERDE}╔═══════════╗")
+    print(f"║{BLANCO} HISTORIAL {VERDE}║")
     print(f"╚═══════════╝{VERDE}\n")
 
     if not historial_operaciones:
@@ -84,8 +84,7 @@ def mostrar_historial():
         Limpiar_pantalla()
     else:
         for i, operacion in enumerate(historial_operaciones, 1):
-            print(f"║ {i}. {operacion}")
-            print("╚════════════════════╝\n")
+            print(f"{i}. {operacion}")
         input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
         Limpiar_pantalla()
         cargar()

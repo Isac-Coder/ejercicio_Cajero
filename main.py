@@ -1,6 +1,7 @@
 from login import autenticar
 from usuarios import CUENTAS
-from MENU import bienvenida
+from MENU import menu
+from bienvenida import bienvenida
 from depositar_dinero import depositar_dinero
 from Retirar import retirar_dinero
 from saldo import consultar_saldo
@@ -10,23 +11,25 @@ from funciones import *
 
 def main():
     Limpiar_pantalla()
+    bienvenida()
+    Limpiar_pantalla()
     usuario = autenticar()
     Limpiar_pantalla()
     
 
     while True:
         if usuario is None:
-             print("🔒 Sistema bloqueado.")
-             exit()
-        bienvenida()
+            print("🔒 Sistema bloqueado.")
+            exit()
+        menu()
         # Leer opción del menú validando que sea numérica
-        opcion = int(pedir_numero(f"selecciona una opcion:{BLANCO}\n# ", al_error=bienvenida))
+        opcion = int(pedir_numero(f"selecciona una opcion:{BLANCO}\n# ", al_error=menu))
 
         if opcion == 2:
                 depositar_dinero(usuario, CUENTAS)
 
         elif opcion == 1:
-               retirar_dinero(usuario , CUENTAS)
+            retirar_dinero(usuario , CUENTAS)
 
         elif opcion == 3:
                 consultar_saldo(usuario, CUENTAS)
