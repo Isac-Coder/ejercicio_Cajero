@@ -100,5 +100,3 @@ def autenticar():
                 Limpiar_pantalla()
                 cargar()
                 Limpiar_pantalla()
-
-autenticar()
