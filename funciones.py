@@ -49,7 +49,7 @@ def pedir_numero(mensaje, al_error=None):
 def cargar():
     print(f"{VERDE}Cargando", end="")
     for _ in range(3):
-        time.sleep(random.uniform(0.5, 1.5))
+        time.sleep(random.uniform(0.5, 0.9))
         print(".", end="", flush=True)
 
 def saliendo():

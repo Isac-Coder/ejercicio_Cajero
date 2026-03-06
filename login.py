@@ -36,7 +36,6 @@ def autenticar():
                 cargar()
                 Limpiar_pantalla()
                 return 
-                break
             
             continue
         
@@ -58,11 +57,14 @@ def autenticar():
                 Limpiar_pantalla()
                 cargar()
                 Limpiar_pantalla()
+                if intentos == MAX_INTENTOS:
+                    print(f"{ROJO}🔒 Cuenta bloqueada temporalmente por demasiados intentos de PIN.{AMARILLO}")
+                    input(f"Presione Enter para continuar...{VERDE}")
+                    return None
                 continue
 
             if len(pin) != 4:
                 intentos += 1
-
 
                 print(f"{ROJO}⚠ Error: El PIN debe tener exactamente 4 digitos.{AMARILLO}")
                 print(f"Intentos restantes: {MAX_INTENTOS - intentos}{VERDE}")
@@ -71,6 +73,10 @@ def autenticar():
                 Limpiar_pantalla()
                 cargar()
                 Limpiar_pantalla()
+                if intentos == MAX_INTENTOS:
+                    print(f"{ROJO}🔒 Cuenta bloqueada temporalmente por demasiados intentos de PIN.{AMARILLO}")
+                    input(f"Presione Enter para continuar...{VERDE}")
+                    return None
                 continue
 
             if CUENTAS[usuario]["clave"] == pin:
@@ -87,5 +93,12 @@ def autenticar():
                 print(f"Intentos restantes: {MAX_INTENTOS - intentos}")
 
                 if intentos == MAX_INTENTOS:
-                    print("🔒 Cuenta bloqueada temporalmente por demasiados intentos de PIN.")
+                    print(f"{ROJO}🔒 Cuenta bloqueada temporalmente por demasiados intentos de PIN.{AMARILLO}")
+                    input(f"{AMARILLO}Presione Enter para continuar...{VERDE}")
                     return None
+                input(f"{AMARILLO}Presione Enter para Salir...{VERDE}")
+                Limpiar_pantalla()
+                cargar()
+                Limpiar_pantalla()
+
+autenticar()
