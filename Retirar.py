@@ -11,8 +11,6 @@ def retirar_dinero(usuario, CUENTAS):
     elif retirar > CUENTAS[usuario]["saldo"]:
         print("No se puede retirar más del saldo disponible.")
 
-    elif retirar != int:
-        print("Porfavor ingrese un monto valido.")
     else:
         CUENTAS[usuario]["saldo"] -= retirar
         print("Retiro exitoso.")

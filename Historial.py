@@ -24,4 +24,3 @@ def mostrar_historial():
             print(f"│ {i}. {operacion}")
             print("└────────────────────┘\n")
 
-mostrar_historial()

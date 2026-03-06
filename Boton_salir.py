@@ -7,4 +7,3 @@ def salir():
     exit()
     
 
-salir()

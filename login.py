@@ -50,5 +50,3 @@ def autenticar():
                     print("🔒 Cuenta bloqueada temporalmente por demasiados intentos de PIN.")
                     return None
                 
-if __name__ == "__main__":    
-    autenticar()
