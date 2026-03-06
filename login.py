@@ -35,7 +35,8 @@ def autenticar():
                 Limpiar_pantalla()
                 cargar()
                 Limpiar_pantalla()
-                return None
+                return 
+                break
             
             continue
         

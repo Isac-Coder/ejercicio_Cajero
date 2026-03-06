@@ -52,6 +52,12 @@ def cargar():
         time.sleep(random.uniform(0.5, 1.5))
         print(".", end="", flush=True)
 
+def saliendo():
+    print(f"{VERDE}Saliendo", end="")
+    for _ in range(3):
+        time.sleep(random.uniform(0.5, 1))
+        print(".", end="", flush=True)        
+
 def Limpiar_pantalla():
     os.system('cls' if os.name == 'nt' else 'clear')
 

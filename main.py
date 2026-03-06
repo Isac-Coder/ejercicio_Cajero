@@ -4,7 +4,7 @@ from MENU import bienvenida
 from depositar_dinero import depositar_dinero
 from Retirar import retirar_dinero
 from saldo import consultar_saldo
-from Boton_salir import salir
+from salir import salir
 from funciones import *
 
 
