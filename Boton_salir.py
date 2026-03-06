@@ -1,9 +1,9 @@
 #Menu
-
+from ansi_colores import *
 
 
 def salir():
-    print("Gracias por usar el cajero automático ")
+    print(f"{VERDE}Gracias por usar el cajero automático ")
     exit()
     
 

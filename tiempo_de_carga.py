@@ -1,6 +1,6 @@
 import time
 import random
-from colores import *
+from ansi_colores import *
 
 def cargar():
     print(f"{VERDE}Cargando", end="")

@@ -1,8 +1,9 @@
-from colores import *
+from ansi_colores import *
 from tiempo_de_carga import cargar
 from limpiar_pantalla import Limpiar_pantalla
 from main import saldo
 from Validaciones import pedir_numero
+from usuarios import *
 
 
 while True:
@@ -41,4 +42,5 @@ while True:
             Limpiar_pantalla()
             cargar()
             Limpiar_pantalla()
+
     depositar_dinero()
