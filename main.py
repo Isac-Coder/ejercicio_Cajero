@@ -9,7 +9,6 @@ from salir import salir
 from crear_cuenta import crear_cuenta
 from funciones import *
 
-
 def main():
     Limpiar_pantalla()
     bienvenida()
