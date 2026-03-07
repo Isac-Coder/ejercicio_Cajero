@@ -15,3 +15,5 @@ def menu():
     print("║  4. Consultar Historial       ║")
     print(f"║{ROJO}  5. Salir{VERDE}                     ║")
     print("╚═══════════════════════════════╝\n")
+
+menu()
