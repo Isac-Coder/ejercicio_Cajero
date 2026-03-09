@@ -1,5 +1,5 @@
 #Menu
-from funciones import *
+from codigo.funciones import *
 
 
 def salir():

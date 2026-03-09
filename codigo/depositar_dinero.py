@@ -1,6 +1,6 @@
-from funciones import *
-from usuarios import CUENTAS
-from login import *
+from codigo.funciones import *
+from codigo.usuarios import CUENTAS
+from codigo.login import *
 
 
 LIMITE_MAX_DEPOSITO = 1_000_000

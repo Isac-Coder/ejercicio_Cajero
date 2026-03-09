@@ -1,5 +1,5 @@
-from funciones import *
-from login import *
+from codigo.funciones import *
+from codigo.login import *
 from datetime import date
 
 

@@ -1,5 +1,5 @@
-from usuarios import CUENTAS
-from funciones import *
+from codigo.usuarios import CUENTAS
+from codigo.funciones import *
 
 
 MAX_INTENTOS = 3

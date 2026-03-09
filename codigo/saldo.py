@@ -1,5 +1,5 @@
-from funciones import *
-from usuarios import CUENTAS
+from codigo.funciones import *
+from codigo.usuarios import CUENTAS
 
 
 def consultar_saldo(usuario, CUENTAS):

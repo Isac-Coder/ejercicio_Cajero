@@ -14,9 +14,5 @@
   "luis": {
     "clave": "3333",
     "saldo": 1000
-  },
-  "jose": {
-    "clave": "1234",
-    "saldo": 1000
   }
 }

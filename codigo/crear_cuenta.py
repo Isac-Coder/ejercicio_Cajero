@@ -1,8 +1,8 @@
 """
 Módulo para crear una nueva cuenta y guardarla en el diccionario (persistido en JSON).
 """
-import usuarios
-from funciones import *
+import codigo.usuarios as usuarios
+from codigo.funciones import *
 
 
 def crear_cuenta():

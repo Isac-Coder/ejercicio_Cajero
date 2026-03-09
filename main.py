@@ -1,13 +1,13 @@
-from login import autenticar
-from usuarios import CUENTAS
-from MENU import menu
-from bienvenida import bienvenida
-from depositar_dinero import depositar_dinero
-from Retirar import retirar_dinero
-from saldo import consultar_saldo
-from salir import salir
-from crear_cuenta import crear_cuenta
-from funciones import *
+from codigo.login import autenticar
+from codigo.usuarios import CUENTAS
+from codigo.MENU import menu
+from codigo.bienvenida import bienvenida
+from codigo.depositar_dinero import depositar_dinero
+from codigo.Retirar import retirar_dinero
+from codigo.saldo import consultar_saldo
+from codigo.salir import salir
+from codigo.crear_cuenta import crear_cuenta
+from codigo.funciones import *
 
 def main():
     Limpiar_pantalla()

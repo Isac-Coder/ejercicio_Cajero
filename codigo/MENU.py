@@ -1,4 +1,4 @@
-from funciones import *
+from codigo.funciones import *
 
 def menu():
     Limpiar_pantalla()
