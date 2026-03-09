@@ -1,4 +1,4 @@
-#  **Simulador de cajero automático**
+<h1 align="center" >Simulador de cajero automático</h1>
 
 ## _Descripción del proyecto_
 
